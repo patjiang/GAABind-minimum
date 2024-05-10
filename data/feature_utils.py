@@ -7,7 +7,7 @@ from sklearn.cluster import KMeans
 from rdkit.Chem.rdMolAlign import AlignMolConformers
 
 def read_mol(molfile):
-    Chem.WrapLogs()
+    rdkit.rdBase.WrapLogs()
     if molfile.endswith('.sdf') or molfile.endswith('.mol'):
         mol = Chem.MolFromMolFile(molfile)
         mol = Chem.AddHs(mol)
